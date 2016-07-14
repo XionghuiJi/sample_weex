@@ -1,0 +1,75 @@
+//所有工程都要用的公共配置，由各个子模块直接apply from 如：apply from: '../global_config.gradle'
+ android {
+  compileSdkVersion COMPILE_SDK_VERSION as int
+  buildToolsVersion BUILD_TOOLS_VERSION
+
+  useLibrary 'org.apache.http.legacy'
+
+  defaultConfig {
+    minSdkVersion MIN_SDK_VERSION as int
+    targetSdkVersion TARGET_SDK_VERSION as int
+  }
+
+  buildTypes {
+    debug {
+      debuggable true
+      minifyEnabled false
+    }
+    release {
+      minifyEnabled false
+    }
+  }
+
+  sourceSets {
+    main {
+      jniLibs.srcDirs = ['libs']
+    }
+  }
+
+
+  // lint所有选项请单独加入
+  lintOptions {
+    checkReleaseBuilds true
+    abortOnError false
+    check 'NewApi' //新API
+    showAll true
+    textReport true
+    xmlReport true
+    htmlReport true
+  }
+
+   dexOptions {
+     //使用增量模式构建
+     incremental true
+     //最大堆内存
+     javaMaxHeapSize "4g"
+     //是否支持大工程模式
+     jumboMode = true
+     //预编译
+     preDexLibraries = true
+     //线程数
+     threadCount = 8
+     //忽略方法数限制的检查
+     jumboMode = true
+   }
+}
+
+
+repositories {
+//  flatDir {
+//    dirs 'libs'
+//  }
+//
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  testCompile 'junit:junit:4.12'
+//  compile(name:'common-release', ext:'aar')
+//  compile(name:'net-release', ext:'aar')
+//  compile(name:'img-release', ext:'aar')
+//  compile(name:'db-release', ext:'aar')
+//  compile(name:'ui-release', ext:'aar')
+//  compile(name:'frame-release', ext:'aar')
+}
+
