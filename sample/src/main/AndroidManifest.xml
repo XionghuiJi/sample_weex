@@ -12,7 +12,7 @@
       android:supportsRtl="true"
       android:theme="@style/AppTheme"
       >
-    <activity android:name="base.MainActivity">
+    <activity android:name="org.zsy.frame.weex.sample.base.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
