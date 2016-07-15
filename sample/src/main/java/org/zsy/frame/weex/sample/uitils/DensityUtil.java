@@ -5,10 +5,8 @@ import android.content.Context;
 import android.util.DisplayMetrics;
 
 /**
- * 系统屏幕的一些操作<br>
- * <b>创建时间</b> 2014-8-14
- * 
- * @version 1.1
+ * 系统屏幕的一些操作
+ * 创建时间
  */
 public final class DensityUtil {
 

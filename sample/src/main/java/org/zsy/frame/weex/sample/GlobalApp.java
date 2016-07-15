@@ -9,7 +9,7 @@ import org.zsy.frame.weex.sample.ui.ada.ImageAdapter;
 import org.zsy.frame.weex.sample.uitils.ImageLoaderHelper;
 
 /**
- * Created by samy on 16/7/14.
+ * Created by samy on 16/7/1.
  */
 public class GlobalApp extends Application {
   private static GlobalApp instance;
