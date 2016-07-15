@@ -2,10 +2,12 @@ package org.zsy.frame.weex.sample.ui.ada;
 
 import android.text.TextUtils;
 import android.widget.ImageView;
+import com.taobao.weex.WXEnvironment;
 import com.taobao.weex.WXSDKManager;
 import com.taobao.weex.adapter.IWXImgLoaderAdapter;
 import com.taobao.weex.common.WXImageStrategy;
 import com.taobao.weex.dom.WXImageQuality;
+import org.zsy.frame.weex.sample.uitils.ImageLoaderHelper;
 
 public class ImageAdapter implements IWXImgLoaderAdapter {
 
@@ -28,7 +30,8 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
         if (view.getLayoutParams().width <= 0 || view.getLayoutParams().height <= 0) {
           return;
         }
-        //Picasso.with(WXEnvironment.getApplication()).load(temp).into(view);
+        //ImageLoaderHelper.getInstance(GlobalApp.getInstance()).displayImage(temp,view);
+        ImageLoaderHelper.getInstance(WXEnvironment.getApplication()).displayImage(temp,view);
       }
     }, 0);
   }

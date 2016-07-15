@@ -11,6 +11,7 @@ import com.taobao.weex.utils.WXFileUtils;
 import com.taobao.weex.utils.WXViewUtils;
 import java.util.HashMap;
 import java.util.Map;
+import org.zsy.frame.weex.sample.BuildConfig;
 import org.zsy.frame.weex.sample.R;
 
 public class MainActivity extends AppCompatActivity implements IWXRenderListener {
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
     mWXSDKInstance = new WXSDKInstance(this);
     mWXSDKInstance.registerRenderListener(this);
 
-    mWXSDKInstance.render(getPackageName(), WXFileUtils.loadFileContent("gold.js", this), null,
+    mWXSDKInstance.render(BuildConfig.APPLICATION_ID, WXFileUtils.loadFileContent("tech_list.js", this), null,
         null, -1, -1, WXRenderStrategy.APPEND_ASYNC);
   }
 
