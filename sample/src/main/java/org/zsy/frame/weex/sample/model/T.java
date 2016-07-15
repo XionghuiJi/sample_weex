@@ -1,4 +1,4 @@
-package org.zsy.frame.weex.sample.ui.fra;
+package org.zsy.frame.weex.sample.model;
 
 /**
  * Created by samy on 16/7/1.
